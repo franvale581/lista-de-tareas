@@ -24,6 +24,8 @@ const addTaskToList = (text) => {
     li.appendChild(p);
     li.appendChild(addDelteBtn());
     listContainer.appendChild(li);
+//vaciamos el input
+    listInput.value = '';
 }
 
 
