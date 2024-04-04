@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
         addTaskToList(task);
     });
 
+    if (tasks.length > 0) {
+        emptyMsg.style.display = "none";
+    }
 });
 
 
@@ -35,8 +38,8 @@ const addDelteBtn = () => {
         const item = e.target.parentElement;
         listContainer.removeChild(item);
 
-        const items = document.querySelectorAll(li);
-        if (items.lenght === 0) {
+        const items = document.querySelectorAll("li");
+        if (items.length === 0) {
             emptyMsg.style.display = "block";
         }
 
@@ -63,8 +66,9 @@ addtBtn.addEventListener("click", (e) => {
         tasks.push(text);
         localStorage.setItem("tasks", JSON.stringify(tasks));
 
-        listInput.value = "";
-        emptyMsg.style.display = "none";
+        if (tasks.length > 0) {
+            emptyMsg.style.display= "none";
+        }
     } else {
         alert("No agregó ninguna tarea");
     }

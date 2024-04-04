@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --bg-: radial-gradient( circle farthest-corner at 50.3% 44.5%,  rgb(53, 66, 80) 0%, rgb(4, 5, 6) 100.2% );
+    --bg-list: #adb5bd;
+    --title-bg: linear-gradient( 111.4deg,  rgb(238, 165, 113) 1%, rgba(246,215,148,1) 58% );
+    --dlt-btn: #d62828;
+    --txt-color : #2b2d42;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    user-select: none;
+    font-family: "Roboto", sans-serif;
+    list-style: none;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 5rem;
+    height: 100vh;
+    max-height: 100vh;
+    background: var(--bg-);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    width: 80%;
+}
+
+.list-title-container {
+    text-align: center;
+    height: 3.5rem;
+    width: 35rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    color: var(--bg-list);
+    text-transform: uppercase;
+    gap: 1rem;
+    & i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        background: #d62828;
+        width: 3.1rem;
+        height: 3rem;
+        border-radius:  100%;
+        
+    }
+
+    & .list-title {
+        font-weight: 300;
+        letter-spacing: 2px;
+    }
+}
+
+/*------- Input styles -------*/
+
+.search form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.list-input {
+    height: 2rem;
+    width: 20rem;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 0 1rem;
+    background: #ffffff99;
+}
+
+/*------- Animaciones -------*/
+
+.aure {
+    animation: aure 3s infinite linear;
+  }
+
+  @keyframes aure {
+    0% {
+      box-shadow: 0 -2px 10px #230000;
+    }
+    50% {
+      box-shadow: 0 -2px 20px #ff0b0b;
+    }
+    100% {
+      box-shadow: 0 -2px 10px #300000;
+    }
+  }
+
+  /*animacion de escribir*/
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+  }
+  
+  @keyframes blink-caret {
+    50% {
+      border-color: transparent;
+    }
+  }
+  /* When you change the amount of characters in the h1, you have to change 
+  the with: 14ch and  steps(14, end), if there is 14 characters, put 14, 
+  if there is 20 put 20 */
+  .write {
+    font: bold 200% Consolas, Monaco, monospace;
+    border-right: .1em solid rgb(124, 124, 124);
+    width: 18.20ch;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-animation: typing 3s steps(13, end),
+                 blink-caret .5s step-end infinite alternate;
+  }
